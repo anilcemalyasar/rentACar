@@ -2,8 +2,8 @@ package kodlama.io.rentacar.business.abstracts;
 
 import java.util.List;
 
-import kodlama.io.rentacar.entities.concretes.Brand;
+import kodlama.io.rentacar.business.responses.GetAllBrandsResponse;
 
 public interface BrandService {
-    List<Brand> getAllBrands();
+    List<GetAllBrandsResponse> getAllBrands();
 }

@@ -4,8 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import kodlama.io.rentacar.business.abstracts.BrandService;
-import kodlama.io.rentacar.entities.concretes.Brand;
-
+import kodlama.io.rentacar.business.responses.GetAllBrandsResponse;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +24,7 @@ public class BrandsController {
 
     
     @GetMapping("")
-    public List<Brand> getAllBrands() {
+    public List<GetAllBrandsResponse> getAllBrands() {
         return brandService.getAllBrands();
     }
     
