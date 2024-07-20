@@ -16,9 +16,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.PathVariable;
-
-
 
 
 @RestController
@@ -35,7 +36,7 @@ public class BrandsController {
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public void add(@RequestBody CreateBrandRequest createBrandRequest) {
+    public void add(@RequestBody @Valid CreateBrandRequest createBrandRequest) {
         brandService.addBrand(createBrandRequest);
     }
 
@@ -45,7 +46,7 @@ public class BrandsController {
     }
     
     @PutMapping("")
-    public void updateBrand(@RequestBody UpdateBrandRequest updateBrandRequest) {
+    public void updateBrand(@RequestBody @Valid UpdateBrandRequest updateBrandRequest) {
         brandService.updateBrand(updateBrandRequest);
     }
 
